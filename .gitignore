@@ -1,0 +1,4 @@
+.env
+.env.*
+certs.*
+prestashop_8.2.1/var/cache/prod

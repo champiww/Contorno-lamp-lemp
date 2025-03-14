@@ -1,0 +1,26 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./prestashop_8.2.1:/app
+      - ./certs:/certs
+      - ./nginx-lemp/vhost-nginx.conf:/etc/nginx/conf.d/vhost-nginx.conf
+    networks:
+      redelamplemp:
+        aliases:
+          - prestashop.champi.blog
+  phpserver:
+    build: php-lemp
+    env_file:
+      - .env.prod
+    volumes:
+      - ./prestashop_8.2.1:/app
+      - ./php-lemp/www.conf:/etc/php/8.1/fpm/pool.d/www.conf
+    networks:
+      redelamplemp:
+
+networks:
+  redelamplemp:

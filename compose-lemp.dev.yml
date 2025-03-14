@@ -1,0 +1,58 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./prestashop_8.2.1:/app
+      - ./certs.dev:/certs.dev
+      - ./nginx-lemp/vhost-nginx.conf:/etc/nginx/conf.d/vhost-nginx.conf
+    networks:
+      redelamplemp:
+        aliases:
+          - prestashop.champi.blog
+
+  phpserver:
+    build: php-lemp
+    volumes:
+      - ./prestashop_8.2.1:/app
+      - ./php-lemp/www.conf:/etc/php/8.1/fpm/pool.d/www.conf
+      #php.ini
+    env_file:
+      - .env.dev
+    networks:
+      redelamplemp:
+
+  basededatos:
+    image: mysql:latest
+    env_file:
+      - .env.dev
+    volumes:
+      - datos:/var/lib/mysql
+    networks:
+      redelamplemp:
+  
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=basededatos
+    networks:
+      - redelamplemp
+
+  cliente:
+    hostname: cliente
+    image: brunosct/debian12-cliente-firefox
+    networks:
+      - redelamplemp
+    environment:
+    - DISPLAY=${DISPLAY}
+    volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix  
+
+volumes:
+  datos:
+networks:
+  redelamplemp:
