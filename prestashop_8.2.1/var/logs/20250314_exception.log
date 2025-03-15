@@ -1,0 +1,2 @@
+*ERROR* 	v8.2.1	2025/03/14 - 23:57:43: Link to database cannot be established: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for basededatos failed: Name or service not known at line 121 in file classes/db/DbPDO.php
+*ERROR* 	v8.2.1	2025/03/14 - 23:57:44: Link to database cannot be established: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for basededatos failed: Name or service not known at line 121 in file classes/db/DbPDO.php

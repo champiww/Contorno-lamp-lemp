@@ -9,4 +9,4 @@ services:
     volumes:
       - ./prestashop_8.2.1:/app
       - ./apache-php-lamp/vhost-apache.conf:/etc/apache2/sites-enabled/vhost-apache.conf
-      - ./certs:/certs
+      - ./certs.dev:/certs.dev

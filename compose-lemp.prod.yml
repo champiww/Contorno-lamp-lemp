@@ -6,7 +6,7 @@ services:
       - "443:443"
     volumes:
       - ./prestashop_8.2.1:/app
-      - ./certs:/certs
+      - ./certs.dev:/certs.dev
       - ./nginx-lemp/vhost-nginx.conf:/etc/nginx/conf.d/vhost-nginx.conf
     networks:
       redelamplemp:
@@ -21,6 +21,16 @@ services:
       - ./php-lemp/www.conf:/etc/php/8.1/fpm/pool.d/www.conf
     networks:
       redelamplemp:
+
+  cliente:
+    hostname: cliente
+    image: brunosct/debian12-cliente-firefox
+    networks:
+      - redelamplemp
+    environment:
+    - DISPLAY=${DISPLAY}
+    volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix
 
 networks:
   redelamplemp:

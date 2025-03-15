@@ -1564,7 +1564,7 @@ CREATE TABLE `ps_connections` (
   KEY `id_guest` (`id_guest`),
   KEY `date_add` (`date_add`),
   KEY `id_page` (`id_page`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1573,7 +1573,7 @@ CREATE TABLE `ps_connections` (
 
 LOCK TABLES `ps_connections` WRITE;
 /*!40000 ALTER TABLE `ps_connections` DISABLE KEYS */;
-INSERT INTO `ps_connections` VALUES (1,1,1,1,1,2130706433,'2025-03-14 23:57:44','https://www.prestashop.com'),(2,1,1,3,1,2886860805,'2025-03-14 23:58:23',''),(3,1,1,4,1,2886860805,'2025-03-14 23:59:16','');
+INSERT INTO `ps_connections` VALUES (1,1,1,1,1,2130706433,'2025-03-14 23:57:44','https://www.prestashop.com'),(2,1,1,3,1,2886860805,'2025-03-14 23:58:23',''),(3,1,1,4,1,2886860805,'2025-03-14 23:59:16',''),(4,1,1,5,1,2886860803,'2025-03-15 00:09:37',''),(5,1,1,6,1,2886860803,'2025-03-15 00:17:04',''),(6,1,1,7,1,2886860803,'2025-03-15 00:19:43','');
 /*!40000 ALTER TABLE `ps_connections` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1621,7 +1621,7 @@ CREATE TABLE `ps_connections_source` (
   KEY `orderby` (`date_add`),
   KEY `http_referer` (`http_referer`),
   KEY `request_uri` (`request_uri`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1630,7 +1630,7 @@ CREATE TABLE `ps_connections_source` (
 
 LOCK TABLES `ps_connections_source` WRITE;
 /*!40000 ALTER TABLE `ps_connections_source` DISABLE KEYS */;
-INSERT INTO `ps_connections_source` VALUES (1,2,'','prestashop.champi.blog/index.php','','2025-03-14 23:58:23'),(2,3,'','prestashop.champi.blog/index.php','','2025-03-14 23:59:16');
+INSERT INTO `ps_connections_source` VALUES (1,2,'','prestashop.champi.blog/index.php','','2025-03-14 23:58:23'),(2,3,'','prestashop.champi.blog/index.php','','2025-03-14 23:59:16'),(3,4,'','prestashop.champi.blog/index.php','','2025-03-15 00:09:37'),(4,5,'','prestashop.champi.blog/index.php','','2025-03-15 00:17:04'),(5,6,'','prestashop.champi.blog/index.php','','2025-03-15 00:19:43'),(6,5,'','prestashop.champi.blog/index.php','','2025-03-15 00:20:00');
 /*!40000 ALTER TABLE `ps_connections_source` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2840,7 +2840,7 @@ CREATE TABLE `ps_guest` (
   KEY `id_customer` (`id_customer`),
   KEY `id_operating_system` (`id_operating_system`),
   KEY `id_web_browser` (`id_web_browser`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2849,7 +2849,7 @@ CREATE TABLE `ps_guest` (
 
 LOCK TABLES `ps_guest` WRITE;
 /*!40000 ALTER TABLE `ps_guest` DISABLE KEYS */;
-INSERT INTO `ps_guest` VALUES (1,0,0,2,0,0,0,0,0,0,0,0,0,0,'',0),(2,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0),(3,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0),(4,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0);
+INSERT INTO `ps_guest` VALUES (1,0,0,2,0,0,0,0,0,0,0,0,0,0,'',0),(2,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0),(3,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0),(4,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0),(5,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0),(6,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0),(7,8,3,0,0,0,0,0,0,0,0,0,0,0,'en',0);
 /*!40000 ALTER TABLE `ps_guest` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -7985,4 +7985,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-14 23:00:28
+-- Dump completed on 2025-03-14 23:49:32
