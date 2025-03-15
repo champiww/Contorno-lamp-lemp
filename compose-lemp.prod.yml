@@ -1,6 +1,7 @@
 services:
   nginx:
     image: nginx:latest
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
@@ -14,6 +15,7 @@ services:
           - prestashop.champi.blog
   phpserver:
     build: php-lemp
+    restart: unless-stopped
     env_file:
       - .env.prod
     volumes:
@@ -21,16 +23,6 @@ services:
       - ./php-lemp/www.conf:/etc/php/8.1/fpm/pool.d/www.conf
     networks:
       redelamplemp:
-
-  cliente:
-    hostname: cliente
-    image: brunosct/debian12-cliente-firefox
-    networks:
-      - redelamplemp
-    environment:
-    - DISPLAY=${DISPLAY}
-    volumes:
-    - /tmp/.X11-unix:/tmp/.X11-unix
 
 networks:
   redelamplemp:
