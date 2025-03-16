@@ -30,6 +30,7 @@ services:
       - .env.dev
     volumes:
       - datos:/var/lib/mysql
+      - ./basededatos/backup-bd.sql:/docker-entrypoint-initdb.d/backup-bd.sql
     networks:
       redelamplemp:
   
